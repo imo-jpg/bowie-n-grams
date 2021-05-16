@@ -8,7 +8,6 @@ filename = "songs/songs70s.txt"
 # This should store every sentence in our dataset
 with open(filename, "r") as f:
 	dataset = f.read().splitlines() 
-	
 # This (currently empty) dictionary will eventually map from N-1 words
 # to a list of all the words we've seen follow it in our dataset
 ngram_mapping = {}
@@ -35,38 +34,64 @@ for sentence in dataset:
 		# Then this line uses the slice (":") operator to ask for the window of our words list starting
 		# at idx and going N-1 words after that (the endpoint of the slice isn't included, which is why we 
 		# slice all the way to idx+N)
-		ngram = words[idx:idx+N]
 
-		keyName = " ".join(ngram[:-1])
-		if ngram_mapping.get(keyName):
-			existingKey = ngram_mapping.get(keyName)
-			existingKey.append(ngram[-1])
+		#trying to use just one word
+		mgram = words[idx:idx+N-1]
+		keyMame = mgram[-2]
+		if ngram_mapping.get(keyMame):
+			existingKey = ngram_mapping.get(keyMame)
+			existingKey.append(mgram[-1])
 		else:
-			ngram_mapping[keyName] = []
-			ngram_mapping[keyName].append(ngram[-1])
+			ngram_mapping[keyMame] = []
+			ngram_mapping[keyMame].append(mgram[-1])
+
+		#for using two words
+		# ngram = words[idx:idx+N]
+		# keyName = " ".join(ngram[:-1])
+		# if ngram_mapping.get(keyName):
+		# 	existingKey = ngram_mapping.get(keyName)
+		# 	existingKey.append(ngram[-1])
+		# else:
+		# 	ngram_mapping[keyName] = []
+		# 	ngram_mapping[keyName].append(ngram[-1])
 
 		# TODO: we need to take the first (N-1) words of our ngram and record in our dictionary one instance
 		# of it being followed by the last word in our ngram. For instance, we would want to add one instance
 		# of the word "ago" to our dictionary entry for "three days"
-
+# print(ngram_mapping)
 newSong = ['but', 'i']
-song_len = 25
+song_len = 150
 
 randomStart = []
 randomKey = random.choice(list(ngram_mapping))
-randomWords = [word for word in randomKey.split(" ")] # split the key into two words separated by a comma
-randomStart = randomWords
+
+#for using two words
+# randomWords = [word for word in randomKey.split(" ")] # split the key into two words separated by a comma
+# randomStart = randomWords
+
+#for using one word
+randomStart.append(randomKey)
 
 for _ in range(song_len):
-	cur_context = " ".join(randomStart[-2:])
+	#for using two words
+	# cur_context = " ".join(randomStart[-2:])
+	
+	#for using one word
+	cur_m_context = randomStart[-1]
 
-	if cur_context not in ngram_mapping:
+	#for using two words
+	# if cur_context not in ngram_mapping:
+	# 	break
+	# randomStart.append(random.choice(ngram_mapping[cur_context]))
+
+	#for using one word
+	if cur_m_context not in ngram_mapping:
 		break
+	randomStart.append(random.choice(ngram_mapping[cur_m_context]))
 
-	randomStart.append(random.choice(ngram_mapping[cur_context]))
-
-
-print(randomStart)
+# print(randomStart)
+song = " ".join(randomStart)
+print(song)
 	
 
 	
