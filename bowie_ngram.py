@@ -7,7 +7,7 @@ filename = "songs/songs70s.txt"
 
 # This should store every sentence in our dataset
 with open(filename, "r") as f:
-	dataset = f.readlines()
+	dataset = f.read().splitlines() 
 	
 # This (currently empty) dictionary will eventually map from N-1 words
 # to a list of all the words we've seen follow it in our dataset
