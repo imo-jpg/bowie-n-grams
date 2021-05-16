@@ -15,6 +15,7 @@ ngram_mapping = {}
 
 N = 3
 
+
 # Step through each of the sentences in our dataset
 for sentence in dataset:
 	# Convert the sentence (a string) into a list of lowercase words
@@ -49,18 +50,23 @@ for sentence in dataset:
 		# of the word "ago" to our dictionary entry for "three days"
 
 newSong = ['but', 'i']
-song_len = 10
+song_len = 25
+
+randomStart = []
+randomKey = random.choice(list(ngram_mapping))
+randomWords = [word for word in randomKey.split(" ")] # split the key into two words separated by a comma
+randomStart = randomWords
 
 for _ in range(song_len):
-	cur_context = " ".join(newSong[-2:])
+	cur_context = " ".join(randomStart[-2:])
 
 	if cur_context not in ngram_mapping:
 		break
 
-	newSong.append(random.choice(ngram_mapping[cur_context]))
+	randomStart.append(random.choice(ngram_mapping[cur_context]))
 
 
-print(newSong)
+print(randomStart)
 	
 
 	
