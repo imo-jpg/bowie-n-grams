@@ -60,7 +60,7 @@ for sentence in dataset:
 		# of the word "ago" to our dictionary entry for "three days"
 # print(ngram_mapping)
 newSong = ['but', 'i']
-song_len = 150
+song_len = 100
 
 randomStart = []
 randomKey = random.choice(list(ngram_mapping))
