@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bowie Ngrams</title>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@200;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="grid">
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="menu">
+                <a class="nav" href="/index.html">Back Home</a>
+            </div>
+            <div class="tracker">
+                <p>about</p>
+            </div>
+            <div class="lyrics">
+                <h2>
+                    OUR N-GRAM LANGUAGE MODEL
+                </h2>
+                <h3>
+                    WAS BUILT IN PYTHON AND TRAINED ON LYRICS FROM BOWIE’S STUDIO ALBUMS FROM THE 70<span style="text-transform: lowercase">s</span>
+                </h3>
+                <p>
+                    An N-gram model takes N number of words from a dataset and determines which words usually follow that sequence. When presented with a new word, it samples from that word’s spread of following words to pick what comes next. It then ‘slides’ its window of n words along the now created phrase and assesses the last N words in that phrase, beginning the process anew.
+                <p>
+                <p class="creators">
+                    Made by Imogen and Graham. TO VIEW THE SOURCE CODE, PLEASE VISIT OUR <a href="https://github.com/imo-jpg/bowie-n-grams">GITHUB REPO</a>.
+                <p>
+            </div>
+            
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    background: #000000;
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+    column-gap: 16px;
+    grid-template-rows: .5fr 2fr 50% 1fr;
+    row-gap: 16px;
+    /* background-color: #222222; */
+}
+
+.bg {
+    /* background-color: #444444; */
+}
+
+.tracker {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: end;
+}
+
+.lyrics {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    align-self: end;
+}
+
+.number-area {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    align-self: start;
+    justify-self: end;
+    font-weight: bold;
+}
+
+.image {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    align-self: end;
+    justify-self: end;
+}
+
+.menu {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: end;
+    justify-self: end;
+}
+
+.lyrics, #number {
+    color: #E20C2B;
+}
+
+.choice {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    align-self: start;
+    font-weight: bold;
+}
+
+/* .next {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    align-self: start;
+    justify-self: start;
+    font-weight: bold;
+} */
+
+h2 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    line-height: 80%;
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 80%;
+}
+
+p, a {
+    font-size: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.note, .note a {
+    font-size: .6rem;
+    width: 25%;
+    font-weight: bold;
+}
+
+.creators, .creators a {
+    font-size: .6rem;
+    width: 35%;
+    font-weight: bold;
+}
+
+.nav {
+    font-style: italic;
+}
+
+.choice-row {
+    padding-bottom: 5px;
+}
+
+.active-choice {
+    color: #E20C2B;
+}
+
+#submit {
+    padding-left: 16px;
+}
