@@ -16,13 +16,7 @@ body {
     column-gap: 16px;
     grid-template-rows: .5fr 2fr 50% 1fr;
     row-gap: 16px;
-    /* background-color: #222222; */
 }
-
-.bg {
-    /* background-color: #444444; */
-}
-
 .tracker {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -80,16 +74,6 @@ body {
     font-weight: bold;
 }
 
-/* .next {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 5;
-    grid-row-end: 6;
-    align-self: start;
-    justify-self: start;
-    font-weight: bold;
-} */
-
 h2 {
     font-size: 4.5rem;
     font-weight: bold;
@@ -142,4 +126,27 @@ a:hover {
 
 #submit {
     padding-left: 16px;
+}
+
+@media only screen and (max-width:600px) {
+    .image {
+        display: none;
+    }
+
+    .grid {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 75% 1fr;
+        column-gap: 16px;
+        grid-template-rows: .5fr 2fr 50% 1fr;
+        row-gap: 16px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
 }
