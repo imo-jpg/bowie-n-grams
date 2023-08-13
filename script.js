@@ -78,7 +78,7 @@ async function init() {
             currentLyric.append("h3").text("assessed");
             currentLyric.append("h3").text(`${correctChoices} lyrics`).style("color", "#ffffff");
             currentLyric.append("h3").text("out of 20");
-            d3.select(".menu").append("a").attr("class", "nav").attr("href", "/appendix.html").text("About").style("padding-left", "16px");
+            d3.select(".menu").append("a").attr("class", "nav").attr("href", "/bowie-n-gram/appendix.html").text("About").style("padding-left", "16px");
 
         }        
     }); 
