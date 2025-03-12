@@ -78,7 +78,9 @@ async function init() {
             currentLyric.append("h3").text("assessed");
             currentLyric.append("h3").text(`${correctChoices} lyrics`).style("color", "#ffffff");
             currentLyric.append("h3").text("out of 20");
-            d3.select(".menu").append("a").attr("class", "nav").attr("href", "/bowie-n-grams/appendix.html").text("About").style("padding-left", "16px");
+            d3.select(".choice").append("a").attr("class", "nav").attr("href", "/game.html").text("Play Again");
+            // d3.select(".menu").append("a").attr("class", "nav").attr("href", "/home.html").text("Home").style("padding-left", "16px");
+            // d3.select(".menu").append("a").attr("class", "nav").attr("href", "/appendix.html").text("About").style("padding-left", "16px");
 
         }        
     }); 

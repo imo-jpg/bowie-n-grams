@@ -16,13 +16,15 @@ body {
     column-gap: 16px;
     grid-template-rows: .5fr 2fr 50% 1fr;
     row-gap: 16px;
+
 }
 .tracker {
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
     align-self: end;
+    color: #E20C2B;
 }
 
 .lyrics {
@@ -53,12 +55,12 @@ body {
 }
 
 .menu {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
     align-self: end;
-    justify-self: end;
+    justify-self: start;
 }
 
 .lyrics, #number {
@@ -112,8 +114,8 @@ a:hover {
     font-weight: bold;
 }
 
-.nav {
-    font-style: italic;
+span {
+    font-weight: bold;
 }
 
 .choice-row {
